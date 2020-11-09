@@ -1,0 +1,135 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: #000;
+  color: #fff;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  font-family: "Open Sans", sans-serif;
+  font-size: 13px;
+}
+
+h1 {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 40px;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3), 10px 10px 0 rgba(0, 0, 0, 0);
+  transition: 0.8s;
+  letter-spacing: 0.5px;
+}
+
+p {
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 20px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+#quote-box {
+  background: #8e44ad;
+  background-image: url("https://www.transparenttextures.com/patterns/back-pattern.png");
+  transition: 0.3s;
+}
+#quote-box-row {
+  height: 100vh;
+  padding: 0 20px;
+}
+#quote-box-col {
+  text-align: center;
+}
+#quote-box:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-image: radial-gradient(#fff 10%, transparent 50%);
+  opacity: 0.1;
+}
+
+#alapalkki {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+#alapalkki a {
+  color: #fff;
+  padding: 10px 15px;
+  display: inline-block;
+  text-decoration: none;
+  transition: 0.3s;
+  position: relative;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px 0 10px 0;
+  letter-spacing: 1px;
+}
+#alapalkki a i {
+  margin-right: 5px;
+}
+#alapalkki #tweet-quote {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  border-radius: 0 10px 0 10px;
+  transition: 0.3s;
+}
+#alapalkki #new-quote {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}
+#alapalkki .spin > i {
+  animation: spin 0.5s ease 1;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@media only screen and (min-width: 1024px) {
+  #alapalkki a:hover {
+    background: black;
+    transform: translateY(-2px);
+  }
+
+  #tweet-quote:hover > i {
+    transition: 0.3s;
+    color: #38A1F3;
+  }
+  #tweet-quote:before {
+    content: '\f099';
+    font-family: "Font Awesome 5 Brands";
+    position: absolute;
+    opacity: 0;
+  }
+  #tweet-quote:hover:before {
+    animation: tweet 0.5s linear 1;
+  }
+
+  #new-quote:hover > i {
+    transform: rotate(360deg);
+    transition: 0.5s;
+  }
+
+  @keyframes tweet {
+    0% {
+      opacity: 0.3;
+    }
+    100% {
+      transform: scale(4);
+      opacity: 0;
+    }
+  }
+}

@@ -1,0 +1,242 @@
+:root {
+  font-size: 62.5%;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: black;
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.4rem;
+  background: #000;
+}
+
+#editor-container {
+  padding: 2rem;
+  padding-right: 0;
+  height: 100vh;
+  width: 40rem;
+  font-family: "Roboto Mono", monospace;
+  font-size: 1.3rem;
+  color: #fff;
+  position: fixed;
+}
+#editor-container p {
+  margin: 0;
+  line-height: 4rem;
+  height: 5rem;
+  text-transform: uppercase;
+}
+#editor-container #editor {
+  background: #000;
+  color: #55FF1B;
+  width: 100%;
+  height: calc(100% - 5rem);
+  font-size: 1.4rem;
+  border: none;
+  resize: none;
+  font-family: "Roboto Mono", monospace;
+}
+#editor-container #editor:focus {
+  outline: none;
+}
+
+#previewer {
+  width: calc(100% - 40rem);
+  position: relative;
+  left: 40rem;
+  padding: 2rem;
+  z-index: 1000;
+}
+#previewer #browser {
+  width: 100%;
+  background: #fff;
+  border-radius: .5rem;
+  min-height: calc(100vh - 4rem);
+}
+#previewer #browser-header {
+  background: #e5e5e5;
+  padding: 0.8rem 1.4rem;
+  border-radius: .5rem .5rem 0 0;
+  font-size: 1.2rem;
+  box-shadow: 0 -2rem 4rem #000;
+}
+#previewer #browser-header #title {
+  display: inline-block;
+  width: 100%;
+  position: relative;
+}
+#previewer #browser-header #title #controls {
+  display: inline-block;
+  height: 1rem;
+  width: 1rem;
+  background: #FFCF60;
+  border-radius: 50%;
+  position: absolute;
+  left: 1.6rem;
+  top: .5rem;
+}
+#previewer #browser-header #title #controls:before {
+  content: '';
+  position: absolute;
+  left: -1.6rem;
+  height: 1rem;
+  width: 1rem;
+  background: #FF6060;
+  border-radius: 50%;
+}
+#previewer #browser-header #title #controls:after {
+  content: '';
+  position: absolute;
+  left: 1.6rem;
+  height: 1rem;
+  width: 1rem;
+  background: #7AF17A;
+  border-radius: 50%;
+}
+#previewer #browser-header #title p {
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 1rem;
+  position: relative;
+  top: .1rem;
+}
+#previewer #browser-header #address {
+  background: rgba(255, 255, 255, 0.6);
+  color: rgba(0, 0, 0, 0.3);
+  border-radius: .5rem;
+  width: 100%;
+  padding: .8rem 1.2rem;
+  font-family: "Roboto Mono", monospace;
+  font-weight: 300;
+}
+#previewer #browser-header #address .a-lock {
+  margin-right: 1rem;
+}
+#previewer #browser-header #address .darker {
+  color: #000;
+}
+#previewer #browser-header #address .a-star {
+  float: right;
+  position: relative;
+  top: .3rem;
+  color: #FFCF60;
+}
+#previewer #browser #preview {
+  background: #fff;
+  padding: 2rem 5rem;
+  border-radius: 0 0 .5rem .5rem;
+}
+#previewer #browser #preview p {
+  line-height: 2.4rem;
+}
+#previewer #browser #preview pre {
+  max-width: 100%;
+  overflow: scroll;
+  background: rgba(0, 0, 0, 0.05);
+  padding: 1.4rem;
+  margin: 2rem 0;
+  font-size: 1rem;
+  border-radius: .3rem;
+}
+#previewer #browser #preview pre code {
+  background: none;
+  box-shadow: none;
+  margin: 0;
+  font-size: 1rem;
+}
+#previewer #browser #preview code {
+  font-family: "Roboto Mono", monospace;
+  color: #c7254e;
+  background: rgba(0, 0, 0, 0.05);
+  padding: .2rem .4rem;
+  margin: 0 0.6rem;
+  font-size: 1.2rem;
+  border-radius: .3rem;
+}
+#previewer #browser #preview a {
+  text-decoration: none;
+  color: #4AAD29;
+  font-weight: 700;
+  position: relative;
+  transition: 0.3s;
+}
+#previewer #browser #preview a:hover {
+  color: #000;
+}
+#previewer #browser #preview a:hover:after {
+  transition: 0.3s;
+  background: #4AAD29;
+}
+#previewer #browser #preview a:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: .1rem;
+  width: 100%;
+  background: rgba(74, 173, 41, 0.5);
+}
+#previewer #browser #preview blockquote {
+  margin: 0 2rem;
+  padding: .3rem 1.2rem;
+  border-left: solid .2rem #BFBFBF;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: .3rem;
+}
+#previewer #browser #preview table {
+  border-collapse: collapse;
+  max-width: 100%;
+  margin: 2rem 0;
+}
+#previewer #browser #preview table tr th {
+  background: rgba(0, 0, 0, 0.05);
+}
+#previewer #browser #preview table td, #previewer #browser #preview table th {
+  border: solid .1rem #BFBFBF;
+  padding: 1rem 2rem;
+}
+#previewer #browser #preview ol li, #previewer #browser #preview ul li {
+  padding: .5rem 0;
+}
+#previewer #browser #preview img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media only screen and (max-width: 1200px) {
+  #editor-container {
+    width: 100%;
+    height: 40rem;
+    padding: 1rem;
+    display: block;
+  }
+
+  #previewer {
+    padding: 0rem;
+    width: 100%;
+    position: relative;
+    top: 40rem;
+    left: 0;
+    display: block;
+  }
+  #previewer #browser {
+    min-height: calc(100vh - 2rem);
+  }
+  #previewer #browser #preview {
+    padding: 1rem;
+  }
+}

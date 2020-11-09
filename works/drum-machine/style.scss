@@ -1,0 +1,237 @@
+// font
+$primary-font: 'Montserrat', sans-serif;
+// colors
+$background-color: #1b1d27;
+$normal: #c7c7c7;
+$border-color: #0f1117;
+$purple: #b400ff;
+$purple-hover: #cf5cff;
+$blue: #00d8ff;
+$blue-hover: #67e8ff;
+$orange: #ffba00;
+$orange-hover: #ffcc41;
+$red: #ff3b3b;
+$red-hover: #ff5959;
+$green: #00e24a;
+$green-hover: #36ec71;
+
+
+*, *:before, *:after {
+  box-sizing: border-box;
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none; 
+}
+
+body {
+  background: #0D0E13;
+  font-family: $primary-font;
+  color: #fff;
+  margin: 0px;
+}
+
+#container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#drum-machine {
+  padding: 30px;
+  border-radius: 10px;
+  width: 378px;
+  background: $background-color;
+  margin: 0 auto;
+  box-shadow: 0 0 0 10px rgba(#000, 0.3), inset 0 2px 0 rgba(#fff, 0.1), inset 0 -6px 0 rgba(#000, 0.3);
+}
+
+#controls, #name, #power {
+  display: inline-block;
+}
+
+#controls {
+  margin-bottom: 20px;
+  position: relative;
+  width: 100%;
+}
+
+.name {
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: #0D0E13;
+  text-shadow: 0 1px 0 rgba(#fff, 0.1);
+}
+
+.versio {
+  margin-left: 5px;
+  color: rgba(#fff, 0.1);
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+#power {
+  position: absolute;
+  right: 0;
+  top: -7px;
+  
+  i {
+    font-size: 16px;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px rgba(#000, 0.3), inset 0 1px 0 rgba(#fff, 0.1), 0 10px 10px rgba(#000, 0.4);
+    color: rgba(#fff, 0.1);
+    transition: 0.1s;
+    
+    &:active {
+      font-size: 14px;
+      transform: translate(-1px, 1px);
+      box-shadow: 0 0 0 4px rgba(#000, 0.3), inset 0 1px 0 rgba(#fff, 0.1);
+    }
+  }
+  
+  .on {
+    background: rgba(#fff, 0.05);
+    color: $green;
+    text-shadow: 2px 2px 15px $green, -2px -2px 15px $green;
+    box-shadow: 0 0 0 3px rgba(#000, 0.3),inset 0 1px 0 rgba(#fff, 0.05), inset 0 -1px 0 rgba(#fff, 0.05);
+    }
+}
+
+#display {
+  width: 100%;
+  height: 40px;
+  font-family: 'Share Tech Mono', monospace;
+  text-align: center;
+  background: rgba(#fff, 0.05);
+  padding: 10px;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  box-shadow: inset 0 20px 0 rgba(#fff, 0.02), inset 0 3px 10px rgba(#000, 0.5), 0 -1px 0 rgba(#000, 0.4), 0 1px 0 rgba(#fff, 0.1);
+}
+
+#buttons {
+  transition: all 0.4s linear;
+  width: 100%;
+}
+
+#button-row {
+  margin: 4px;
+}
+
+button:focus {
+  outline: none;
+}
+
+.drum-pad {
+  margin: 0px;
+  height: 100px;
+  width: 100px;
+  border-radius: 10px;
+  background: $normal;
+  background-image: radial-gradient(rgba(255,255,255, 1), transparent 54%);
+  background-blend-mode: soft-light;
+  border: solid 5px $border-color;
+  box-shadow: inset 0 0 0 1px rgba(#fff,0.1), inset 0 3px 0 rgba(#fff,0.2);
+  transition: 0.1s;
+  font-family: $primary-font;
+  font-weight: 900;
+  font-size: 20px;
+  color: #fff;
+  text-shadow: 0 5px 10px rgba(#000, 0.2);
+  
+  
+  &:hover {
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.2), inset 0 3px 0 rgba(255,255,255,0.2), inset 0 -3px 0 rgba(#fff, 0.2);
+  }
+  
+  &-blue {
+    background: $blue;
+    background-image: radial-gradient(rgba(255,255,255, 1), transparent 50%);
+    background-blend-mode: soft-light;
+    
+    &:hover {
+      background: $blue-hover;
+      background-image: radial-gradient(rgba(255,255,255, 0.7), transparent 50%);
+      background-blend-mode: soft-light;
+    }
+  }
+  
+  &-green {
+    background: $green;
+    background-image: radial-gradient(rgba(255,255,255, 1), transparent 50%);
+    background-blend-mode: soft-light;
+    
+    &:hover {
+      background: $green-hover;
+      background-image: radial-gradient(rgba(255,255,255, 0.7), transparent 50%);
+      background-blend-mode: soft-light;
+    }
+  }
+  
+  &-purple {
+    background: $purple;
+    background-image: radial-gradient(rgba(255,255,255, 1), transparent 50%);
+  background-blend-mode: soft-light;
+    
+    &:hover {
+      background: $purple-hover;
+      background-image: radial-gradient(rgba(255,255,255, 0.7), transparent 50%);
+      background-blend-mode: soft-light;
+    }
+  }
+  
+  &-orange {
+    background: $orange;
+    background-image: radial-gradient(rgba(255,255,255, 1), transparent 50%);
+  background-blend-mode: soft-light;
+    
+    &:hover {
+      background: $orange-hover;
+      background-image: radial-gradient(rgba(255,255,255, 0.7), transparent 50%);
+      background-blend-mode: soft-light;
+    }
+  }
+  
+  &-red {
+    background: $red;
+    background-image: radial-gradient(rgba(255,255,255, 0.5), transparent 50%);
+  background-blend-mode: soft-light;
+    
+    &:hover {
+      background: $red-hover;
+      background-image: radial-gradient(rgba(255,255,255, 0.7), transparent 50%);
+      background-blend-mode: soft-light;
+    }
+  }
+}
+
+// Keypress hovers
+.drum-pad-hover-blue {
+      background: $blue-hover;
+      background-image: radial-gradient(rgba(255,255,255, 0.7), transparent 50%);
+      background-blend-mode: soft-light;
+    }
+
+.drum-pad-hover-orange {
+      background: $orange-hover;
+      background-image: radial-gradient(rgba(255,255,255, 0.7), transparent 50%);
+      background-blend-mode: soft-light;
+    }
+
+.drum-pad-hover-green {
+      background: $green-hover;
+      background-image: radial-gradient(rgba(255,255,255, 0.7), transparent 50%);
+      background-blend-mode: soft-light;
+    }
+
+.drum-pad-hover-purple {
+      background: $purple-hover;
+      background-image: radial-gradient(rgba(255,255,255, 0.7), transparent 50%);
+      background-blend-mode: soft-light;
+    }

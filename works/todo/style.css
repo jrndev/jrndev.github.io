@@ -1,0 +1,118 @@
+:root {
+  font-size: 62.5%;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  background: #ECEFFA;
+}
+
+#container {
+  padding: 2rem;
+  margin: 5rem auto;
+}
+
+#info h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+#info #add-item {
+  display: inline;
+  position: relative;
+}
+#info #add-item input {
+  display: inline;
+  width: 100%;
+  padding: 1.4rem;
+  font-size: 1.6rem;
+  font-weight: 300;
+  outline: none;
+  border: 0.1rem solid #cccccc;
+  color: gray;
+}
+#info #add-item input::-webkit-input-placeholder {
+  color: #b3b3b3;
+}
+#info #add-item input::-moz-placeholder {
+  color: #b3b3b3;
+}
+#info #add-item input:-ms-input-placeholder {
+  color: #b3b3b3;
+}
+#info #add-item input::-ms-input-placeholder {
+  color: #b3b3b3;
+}
+#info #add-item input::placeholder {
+  color: #b3b3b3;
+}
+
+#list ul {
+  margin: 0;
+  padding: 0;
+  border: 0.1rem solid #cccccc;
+  border-top: none;
+  border-bottom: none;
+  position: relative;
+  background: #fff;
+}
+#list ul:before {
+  content: '';
+  position: absolute;
+  bottom: -.3rem;
+  left: .2rem;
+  width: calc(100% - .4rem);
+  height: 1rem;
+  background: #fff;
+  border: 0.1rem solid #cccccc;
+  z-index: -2;
+}
+#list ul:after {
+  content: '';
+  position: absolute;
+  bottom: -.6rem;
+  left: .5rem;
+  width: calc(100% - 1rem);
+  height: 1rem;
+  background: #fff;
+  border: 0.1rem solid #cccccc;
+  z-index: -3;
+}
+#list li {
+  padding: 1.8rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border-bottom: 0.1rem solid #cccccc;
+  list-style-type: none;
+}
+#list li:hover > .delete {
+  display: inline-block;
+}
+#list li .delete {
+  text-transform: none;
+  text-decoration: none;
+  float: right;
+  position: relative;
+  top: .2rem;
+  font-weight: 400;
+  color: #b3b3b3;
+  -webkit-transition: .2s;
+  transition: .2s;
+  display: none;
+}
+#list li .delete:hover {
+  color: red;
+}
+
+@media only screen and (min-width: 769px) {
+  #container {
+    max-width: 117rem;
+  }
+}
